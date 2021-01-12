@@ -100,18 +100,21 @@ public class CoinGame
         int round = 1;
 
         while ((round < maxRounds) && (player1coins > 3) && (player2coins > 3) ){
-            getPlayer1Move(round);
-            getPlayer2Move(round);
+            int player1move = getPlayer1Move(round);
+            int player2move = getPlayer2Move(round);
+            player2coins -= player2move;
+            player1coins -= player1move;
 
-            if (getPlayer2Move(round) == getPlayer1Move(round)){
+
+            if (player2move == player1move){
                 player2coins++;
             }
 
-            if (((getPlayer2Move(round) - getPlayer1Move(round)) == 1) || ((getPlayer2Move(round) - getPlayer1Move(round)) == -1 )){
+            if ((player1move - player2coins == 1) || ((player1move - player2move) == -1 )){
                 player2coins++;
             }
 
-            if (((getPlayer2Move(round) - getPlayer1Move(round)) == 2) || ((getPlayer2Move(round) - getPlayer1Move(round)) == -2 )){
+            if (((player1move - player2coins) == 2) || ((player1move - player2coins) == -2 )){
                 player1coins += 2;
             }
 
