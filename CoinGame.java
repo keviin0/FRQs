@@ -2,9 +2,9 @@ public class CoinGame
 
 {
 
-    private int startingCoins; // starting number of coins
+    private int startingCoins = 10; // starting number of coins
 
-    private int maxRounds; // maximum number of rounds played
+    private int maxRounds = 5; // maximum number of rounds played
 
 
 
@@ -15,6 +15,7 @@ public class CoinGame
         startingCoins = s;
 
         maxRounds = r;
+        playGame();
 
     }
 
@@ -24,11 +25,34 @@ public class CoinGame
 
      */
 
-    public int getPlayer1Move()
+    public int getPlayer1Move(int round)
 
     {
 
         /* implementation not shown. */
+        if (round == 1){
+            return 2;
+        }
+
+        if (round == 2){
+            return 2;
+        }
+
+        if (round == 3){
+            return 1;
+        }
+
+        if (round == 4){
+            return 2;
+        }
+
+        if (round == 5){
+            return 3;
+        }
+
+        else{
+            return 1;
+        }
 
     }
 
@@ -76,18 +100,18 @@ public class CoinGame
         int round = 1;
 
         while ((round < maxRounds) && (player1coins > 3) && (player2coins > 3) ){
-            getPlayer1Move();
+            getPlayer1Move(round);
             getPlayer2Move(round);
 
-            if (getPlayer2Move(round) == getPlayer1Move()){
+            if (getPlayer2Move(round) == getPlayer1Move(round)){
                 player2coins++;
             }
 
-            if (((getPlayer2Move(round) - getPlayer1Move()) == 1) || ((getPlayer2Move(round) - getPlayer1Move()) == -1 )){
+            if (((getPlayer2Move(round) - getPlayer1Move(round)) == 1) || ((getPlayer2Move(round) - getPlayer1Move(round)) == -1 )){
                 player2coins++;
             }
 
-            if (((getPlayer2Move(round) - getPlayer1Move()) == 2) || ((getPlayer2Move(round) - getPlayer1Move()) == -2 )){
+            if (((getPlayer2Move(round) - getPlayer1Move(round)) == 2) || ((getPlayer2Move(round) - getPlayer1Move(round)) == -2 )){
                 player1coins += 2;
             }
 
