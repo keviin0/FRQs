@@ -13,4 +13,19 @@ public class IteratingLoop {
         }
 
     }
+
+    public void run() {
+        String[] words = {"ten", "fading", "post", "card", "thunder", "hinge", "trailing", "batting"};
+
+
+        for( String i : words){
+            if (i.endsWith("ing")) {
+
+                System.out.println(i);
+            }
+
+
+        }
+    }
+
 }
