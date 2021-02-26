@@ -39,6 +39,10 @@ public class Main {
                 "F.D. Bedford");
         myBook.printBookInfo();
 
+        //(b)   Write a code segment that can be used to replace /* missing code */ so that book1 and book2 will be correctly created and added to myLibrary. Assume that class PictureBook works as intended, regardless of what you wrote in part (a).
+        //
+        //The BookListing class is used to generate a descriptive listing for a book. The BookListing constructor takes a Book object and a double value as parameters and uses them to print information about the book, along with its price.
+        //Assume that book1 and book2 were created as specified in part (b). The following table demonstrates the intended behavior of the BookListing class using objects book1 and book2.
         ArrayList<Book> myLibrary = new ArrayList<Book>();
         Book book1 = new Book("Frankenstein","Mary Shelley");
         PictureBook book2 = new PictureBook("The Wonderful Wizard Of Oz", "L. Frank Baum",

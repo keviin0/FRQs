@@ -1,7 +1,7 @@
 public class Herbivore extends Animal {
     String species;
     String name;
-
+//(b)   Write the complete Herbivore class. Your implementation must meet all specifications and conform to the behavior shown in the table.
     public Herbivore(String species, String name) {
         super("Herbivore", species, name);
         this.species = species;
